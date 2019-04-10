@@ -1,49 +1,49 @@
-const names = [
-  "Dwiki Dharmawan",
-  "Monita Tahalea",
-  "Budi Doremi",
-  "Andre Hehanusa"
-];
+// const names = [
+//   "Dwiki Dharmawan",
+//   "Monita Tahalea",
+//   "Budi Doremi",
+//   "Andre Hehanusa"
+// ];
 
-const showNames = names => {
-  for (let index = 0; index < names.length; index++) {
-    const name = names[index];
+// const showNames = names => {
+//   for (let index = 0; index < names.length; index++) {
+//     const name = names[index];
 
-    console.log(`[${index + 1}] ${name}`);
-  }
-};
+//     console.log(`[${index + 1}] ${name}`);
+//   }
+// };
 
-showNames(names);
+// showNames(names);
 
 // filter Names
 
-const nameFull = [
-  "Dwiki Dharmawan",
-  "Monita Tahalea",
-  "Budi Doremi",
-  "Andre Hehanusa"
-];
+// const nameFull = [
+//   "Dwiki Dharmawan",
+//   "Monita Tahalea",
+//   "Budi Doremi",
+//   "Andre Hehanusa"
+// ];
 
-const filterNames = (names, minimumLength) => {
-  let newNames = [];
+// const filterNames = (names, minimumLength) => {
+//   let newNames = [];
 
-  for (let index = 0; index < names.length; index++) {
-    const name = names[index];
+//   for (let index = 0; index < names.length; index++) {
+//     const name = names[index];
 
-    if (name.length >= minimumLength) {
-      newNames.push(name);
-    }
-  }
-  return newNames;
-};
+//     if (name.length >= minimumLength) {
+//       newNames.push(name);
+//     }
+//   }
+//   return newNames;
+// };
 
-const filteredNames = filterNames(nameFull, 12);
+// const filteredNames = filterNames(nameFull, 12);
 
-showNames(filteredNames);
+// showNames(filteredNames);
 
 // Array of Objects
 
-const myContacts = [
+const contacts = [
   {
     id: 1,
     name: "Rudi Marudi",
@@ -73,34 +73,31 @@ const myContacts = [
   }
 ];
 
-// Show Contacts
+// Show Contact;
+// console.log(contacts);
 
-const showContacts = contacts => {
-  for (let index = 0; index < contacts.length; index++) {
-    const contact = contacts[index];
-    console.log(
-      `[${contact.id}] ${contact.name} (${contact.phone}) <${contact.email}>`
-    );
-  }
+// const showContacts = contact => {
+//   for (let index = 0; index < contact.length; index++) {
+//     const contact = contacts[index];
+//     console.log(
+//       `[${contact.id}] ${contact.name} (${contact.phone}) <${contact.email}>`
+//     );
+//   }
+// };
+
+// showContacts(contacts);
+
+// // Filter Contacts
+
+const filterContacts = telpNo => {
+  // for (let index = 0; index < contacts.length; index++) {
+  //   const contact = [contacts[index]];
+  //   console.log(contact);
+  const filteredItem = contacts.find(sp => {
+    return sp.phone === telpNo;
+  });
+  return filteredItem;
 };
+const filteredContacts = filterContacts("+21883928192");
 
-showContacts(myContacts);
-
-// Filter Contacts
-
-const filterContacts = (myContacts, minimumLength) => {
-  let newContacts = [];
-
-  for (let index = 0; index < myContacts.length; index++) {
-    const contact = myContacts[index];
-
-    if (contact.phone.length >= minimumLength) {
-      newContacts = contact;
-    }
-  }
-  return newContacts;
-};
-
-const filteredContacts = filterContacts(myContacts, 12);
-
-showContacts(filteredContacts);
+console.log(filteredContacts);
